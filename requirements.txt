@@ -1,0 +1,12 @@
+streamlit
+streamlit-option-menu
+PyPDF2
+groq
+langchain_groq
+langchain
+langchain_community
+langchain_google_genai
+faiss-cpu
+python-dotenv
+youtube_transcript_api
+langchain_core
