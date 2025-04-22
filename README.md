@@ -2,14 +2,15 @@
 ## Introduction:
 We are building some Generative AI Applications for creating some new contents.This system will provide a streamlit based user interface for user and gives the response to the user.
 
-Mainly,We have implemented 7 generative ai applications based on some pre-trained model:
+Mainly,We have implemented some generative ai applications based on some pre-trained models:
 #### 1.	Search Engine
-#### 2.	Document Q&A APPLICATION
-#### 3.	Document Summarizer Application
-#### 4. Vision Assistant
-#### 5.	Resume Application Tracking System
-#### 6.	YouTube Transcript Summary Generator
-#### 7.	Health Assistant
+#### 2. Language and Sentiment Analyzer
+#### 3.	Document Q&A
+#### 4.	Document Summarizer
+#### 5. Vision Assistant
+#### 6.	Resume Application Tracking System
+#### 7.	YouTube Transcript Summary Generator
+#### 8.	Health Assistant
 This is an end to end LLM project using langchain framework(which is specially useful  for developing applications powered by language model) based on some pretrained open source  LLM models which are:
 
 •	llama3-8b-8192(developed by MetaAI),model type=Chat
@@ -26,11 +27,24 @@ This is an end to end LLM project using langchain framework(which is specially u
 
 The application follows these steps to provide responses to our questions:
 1.	Input Query Reading: The app reads our given query.
-2.	Response Generation: Given query text and an input prompt are passed to the chat model(llama3-8b-8192),which generates a response based on the given query text and the input prompt.
+2.	Response Generation: Given query text and an prompt template are passed to the chat model(llama3-8b-8192),which generates a response based on the given query text and the input prompt.
+
+
+## 2. Language and Sentiment Analyzer:
+### Objective:
+  This is a python application that allows us to analyze any text in any language and convert the given text to english and also analyze the sentiment in english.
+### How It Works:
+![image](https://github.com/user-attachments/assets/26cfa8a5-0d02-4019-a7b5-28ce95fbf44a)
+
+The application follows these steps to provide responses based on the input_text:
+1.	Input text Reading: The app reads our given given input text.
+2.	Response Generation: Given input text and a prompt template are passed to the chat model(llama3-8b-8192),which generates a response based on the prompt template.
 
 
 
-## 2. Document Q&A Application:
+
+
+## 3. Document Q&A:
 ### Objective:
   This is a python application that allows us to chat with multiple PDF documents.We can ask questions about the pdfs using natural language,and the application will provide relevant responses based on the 
   context of the documents.This apps utilizes a language model to generate accurate answers to our queries.Please note that the app will only respond to questions related to the loaded PDFs.
@@ -47,7 +61,7 @@ The application follows these steps to provide responses to our questions:
 
 
 
-## 3. Document Summarizer Application:
+## 4. Document Summarizer:
 ### Objective:
   This is a python application that allows us to summarize multiple PDF documents simultaneously.
 ### How It Works:
@@ -60,7 +74,7 @@ The application follows these steps to provide summary of our uploaded pdfs:
 
 
 
-## 4. Vision Assistant:
+## 5. Vision Assistant:
 ### Objective:
   This is a python application that allows us to detect the every articles in an image.
 ### How It Works:
@@ -73,7 +87,7 @@ The application follows these steps to detect the image:
 
 
 
-## 5. Resume Application Tracking System:
+## 6. Resume Application Tracking System:
 ### Objective:
   This is a python application that allows us to track our resume or cv based on any job description i.e. how much our resume or cv is eligible for a given job description.
 ### How It Works:
@@ -86,7 +100,7 @@ The application follows these steps to track our resume or cv based on the given
 
 
 
-## 6. YouTube Transcript Summary Generator:
+## 7. YouTube Transcript Summary Generator:
 ### Objective:
 This is a python application that allows us to generate the summarized transcription for a you tube video.
 ### How It Works:
@@ -99,7 +113,7 @@ The application follows these steps to generate summarized transcription based o
 
 
 
-## 7. Health Assistant:
+## 8. Health Assistant:
 ### Objective:
   This is a python application that allows us to generate the total calories of a given food image and also tells us whether the food is healthy or not.
 ### How It Works:
@@ -117,7 +131,7 @@ The application follows these steps to generate the total calories of a given fo
 1. Navigate to the project directory:
 
 ```bash
-  cd genai app
+  cd Generative-AI
 ```
 2. Activate the conda environment:
 ```bash
