@@ -23,7 +23,7 @@ This is an end to end LLM project using langchain framework(which is specially u
 ### Objective:
   The search engine is a python application that allows us to search any queries or question based on any topics.It will give the response to our queries.
 ### How It Works:
-![image](https://github.com/user-attachments/assets/ec5df313-383e-4c88-9b7d-58f4c00a1c9a)
+![WhatsApp Image 2024-07-22 at 16 36 15_efdd415a](https://github.com/user-attachments/assets/e864cfe2-580b-47dd-a4fa-48db7a621252)
 
 The application follows these steps to provide responses to our questions:
 1.	Input Query Reading: The app reads our given query.
@@ -34,7 +34,7 @@ The application follows these steps to provide responses to our questions:
 ### Objective:
   This is a python application that allows us to analyze any text in any language and convert the given text to english and also analyze the sentiment in english.
 ### How It Works:
-![image](https://github.com/user-attachments/assets/26cfa8a5-0d02-4019-a7b5-28ce95fbf44a)
+![WhatsApp Image 2025-04-23 at 02 09 10_81d0af22](https://github.com/user-attachments/assets/e7885b8b-7e7a-4fd3-b16f-36d9c2e3e468)
 
 The application follows these steps to provide responses based on the input_text:
 1.	Input text Reading: The app reads our given given input text.
@@ -49,7 +49,7 @@ The application follows these steps to provide responses based on the input_text
   This is a python application that allows us to chat with multiple PDF documents.We can ask questions about the pdfs using natural language,and the application will provide relevant responses based on the 
   context of the documents.This apps utilizes a language model to generate accurate answers to our queries.Please note that the app will only respond to questions related to the loaded PDFs.
 ### How It Works:
-![image](https://github.com/user-attachments/assets/bd0f0d3c-b148-45fc-8a95-db3dd0066384)
+![WhatsApp Image 2024-07-22 at 16 36 14_e57112d5](https://github.com/user-attachments/assets/2bf2ee99-5523-458b-a972-f1e70638af13)
 
 The application follows these steps to provide responses to our questions:	
 1.	PDF Loading: The app reads multiple PDF documents and extracts their text content.
@@ -65,7 +65,7 @@ The application follows these steps to provide responses to our questions:
 ### Objective:
   This is a python application that allows us to summarize multiple PDF documents simultaneously.
 ### How It Works:
-![image](https://github.com/user-attachments/assets/03031372-e8e0-42c7-a041-092b757aff22)
+![WhatsApp Image 2024-07-22 at 16 36 14_666eb5cb](https://github.com/user-attachments/assets/a043834c-7f56-4540-80b1-78cd526d7fd5)
 
 The application follows these steps to provide summary of our uploaded pdfs:
 1.	PDF Loading: The app reads multiple PDF documents and extracts their text content.
@@ -78,7 +78,7 @@ The application follows these steps to provide summary of our uploaded pdfs:
 ### Objective:
   This is a python application that allows us to detect the every articles in an image.
 ### How It Works:
-![image](https://github.com/user-attachments/assets/6df16b92-a781-43e6-8eb0-e1f259d9c01f)
+![WhatsApp Image 2024-07-25 at 23 44 07_49c9a204](https://github.com/user-attachments/assets/7fb297f6-0052-4971-b30c-407d5b49d9a4)
 
 The application follows these steps to detect the image:
 1.	Image Loading: The app reads the uploaded image and coverts into base64 encoded string.
@@ -91,7 +91,7 @@ The application follows these steps to detect the image:
 ### Objective:
   This is a python application that allows us to track our resume or cv based on any job description i.e. how much our resume or cv is eligible for a given job description.
 ### How It Works:
-![image](https://github.com/user-attachments/assets/61c349ed-ecf9-4dc1-9cda-e6939d83868e)
+![WhatsApp Image 2024-07-22 at 16 36 13_25ea90a9](https://github.com/user-attachments/assets/022ed932-da25-48fe-9c8f-d6769e8b23a6)
 
 The application follows these steps to track our resume or cv based on the given job description:
 1.	Reading Job Description: The app reads the job description in the form of text.
@@ -104,7 +104,7 @@ The application follows these steps to track our resume or cv based on the given
 ### Objective:
 This is a python application that allows us to generate the summarized transcription for a you tube video.
 ### How It Works:
-![image](https://github.com/user-attachments/assets/5b8e7f15-e3ae-481d-8cfb-7d63aa15f313)
+![WhatsApp Image 2024-07-22 at 16 36 13_3fc10be2](https://github.com/user-attachments/assets/9d8986c0-afca-411a-9ebd-e68704c63dba)
 
 The application follows these steps to generate summarized transcription based on the you tube video:
 1.	Reading YouTube video URL : The app reads the You Tube Video URL in the form of text.
@@ -117,7 +117,7 @@ The application follows these steps to generate summarized transcription based o
 ### Objective:
   This is a python application that allows us to generate the total calories of a given food image and also tells us whether the food is healthy or not.
 ### How It Works:
-![image](https://github.com/user-attachments/assets/eb63a8b2-13d6-4b49-9030-8f449eabd088)
+![WhatsApp Image 2024-07-22 at 16 36 13_81743ad4](https://github.com/user-attachments/assets/e56930fc-0e95-49b4-b543-daa941d1368c)
 
 The application follows these steps to generate the total calories of a given food image:
 1.	Food Image Loading: The app reads the uploaded food image and coverts into base64 encoded string.
