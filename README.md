@@ -3,7 +3,7 @@
 We are building some Generative AI Applications for creating some new contents.This system will provide a streamlit based user interface for user and gives the response to the user.
 
 Mainly,We have implemented some generative ai applications based on some pre-trained models:
-#### 1.	Search Engine
+#### 1.	Conversational Q&A
 #### 2. Language and Sentiment Analyzer
 #### 3.	Document Q&A
 #### 4.	Document Summarizer
@@ -19,15 +19,15 @@ This is an end to end LLM project using langchain framework(which is specially u
 
 
 
-## 1. Search Engine:
+## 1. Conversational Q&A:
 ### Objective:
-  The search engine is a python application that allows us to search any queries or question based on any topics.It will give the response to our queries.
+  This is a python application that allows us to search any queries or question based on any topics.It will give the response to our queries and it also remember the previous conversation in a particular session.
 ### How It Works:
-![WhatsApp Image 2024-07-22 at 16 36 15_efdd415a](https://github.com/user-attachments/assets/e864cfe2-580b-47dd-a4fa-48db7a621252)
+![conversational Q A](https://github.com/user-attachments/assets/1edbd5e0-57a7-4021-b650-1bef8caccfac)
 
 The application follows these steps to provide responses to our questions:
 1.	Input Query Reading: The app reads our given query.
-2.	Response Generation: Given query text and an prompt template are passed to the chat model(llama3-8b-8192),which generates a response based on the given query text and the input prompt.
+2.	Response Generation: Given query text and the past conversations are passed to the chat model(llama3-8b-8192),which generates a response based on the given query text and the past conversation.
 
 
 ## 2. Language and Sentiment Analyzer:
