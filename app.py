@@ -4,6 +4,7 @@ from  PyPDF2 import PdfReader
 import PyPDF2 as pdf
 import os
 from langchain_groq import ChatGroq
+from langchain.schema import HumanMessage, SystemMessage, AIMessage
 from langchain.docstore.document import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -56,7 +57,7 @@ def vector_embedding(Docs):
 
 def pdfs_qa_app():
     st.title("DOCUMENT Q&A")
-    uploaded_file=st.file_uploader("Upload Your PDF Files",type="pdf",help="Please upload the pdf",accept_multiple_files=True)
+    uploaded_file=st.file_uploader("Upload Your PDF Files",type="pdf",help="Please upload the pdf",accept_multiple_files=True,key="qa_pdf_uploader")
     submit1 = st.button("Documents Embedding")
     
     if submit1:
@@ -121,7 +122,7 @@ def get_text_chunks(text):
 
 def pdf_summarizer():
     st.title("DOCUMENT SUMMARIZER")
-    uploaded_file=st.file_uploader("Upload Your PDF Files",type="pdf",help="Please upload the pdf",accept_multiple_files=True)
+    uploaded_file=st.file_uploader("Upload Your PDF Files",type="pdf",help="Please upload the pdf",accept_multiple_files=True,key="summarizer_pdf_uploader")
     submit=st.button("Submit")
     if submit:
         if uploaded_file:
@@ -133,27 +134,57 @@ def pdf_summarizer():
             raise FileNotFoundError("No file uploaded")
 
 ## -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## Search Engine
+## Conversational Q&A Chatbot
 
-prompt_search=ChatPromptTemplate.from_messages(
-    [
-        ("system","You are a helpful assistant. Please response to the user queries"),
-        ("user","Question:{question}")
-    ]
-)
+def get_chatmodel_response(question):
+    if question:
+        st.session_state['flowmessages'].append(HumanMessage(content=question))
+        response = llm.invoke(st.session_state['flowmessages'])
+        st.session_state['flowmessages'].append(AIMessage(content=response.content))
+    return ""
 
 
-def search_engine():
-    st.title('SEARCH ENGINE')
-    input_text=st.text_input("Paste the topic or question what u want to know about..")
-    search = st.button("Search")
-    chain=prompt_search | llm
-    if search:
-        if input_text:
-            st.write((chain.invoke({'question':input_text})).content)
-        else:
-            st.write("Please give the topic or question")
-
+def chatbot():
+    st.title('Conversational Q&A Chatbot')
+    st.header("Hey, Let's Chat")
+    
+    # Initialize chat history
+    if 'flowmessages' not in st.session_state:
+        st.session_state.flowmessages = [
+            SystemMessage(content="You are an AI assistant")
+        ]
+    
+    # Display chat messages - identical to chat_input() style
+    for message in st.session_state.flowmessages:
+        if isinstance(message, SystemMessage):
+            continue
+        
+        # Use native chat message styling
+        with st.chat_message("user" if isinstance(message, HumanMessage) else "assistant"):
+            st.write(message.content)
+    
+    # Create identical-looking chat input without using chat_input()
+    chat_container = st.empty()
+    user_input = chat_container.text_input(
+        "Type your message...", 
+        key=f"chat_input_{len(st.session_state.flowmessages)}",
+        label_visibility="collapsed",
+        placeholder="Type a message..."
+    )
+    
+    # Process input on enter key or button press
+    if user_input:
+        get_chatmodel_response(user_input)
+        
+        # Clear input and rerun to refresh
+        chat_container.text_input(
+            "Type your message...", 
+            value="",
+            key=f"chat_input_{len(st.session_state.flowmessages)}_clear",
+            label_visibility="collapsed",
+            placeholder="Type a message..."
+        )
+        st.rerun()
 
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Resume ATS
@@ -365,7 +396,7 @@ st.set_page_config(layout='wide',page_title="GENERATIVE AI APPLICATIONS")
 st.title("GENERATIVE AI APPLICATIONS")
 selected=option_menu(
     menu_title="Menu",
-    options=["Search Engine","Language and Sentiment Analyzer","Document Q&A","Document Summarizer","Vision Assistant","Resume Application Tracking System","YouTube Transcript Summary Generator","Health Assistant"],
+    options=["Conversational Q&A","Language and Sentiment Analyzer","Document Q&A","Document Summarizer","Vision Assistant","Resume Application Tracking System","YouTube Transcript Summary Generator","Health Assistant"],
     icons=["app","app","app","app","app","app","app","app"],
     menu_icon="cast",
     default_index=0,
@@ -376,8 +407,6 @@ if selected == "Document Q&A":
     pdfs_qa_app()
 if selected=="Document Summarizer":
     pdf_summarizer()
-if selected=="Search Engine":
-    search_engine()
 if selected=="Resume Application Tracking System":
     resume_ATS()
 if selected=="YouTube Transcript Summary Generator":
@@ -388,3 +417,15 @@ if selected=="Vision Assistant":
     img_detector()
 if selected=="Language and Sentiment Analyzer":
     Analyzer()
+if selected=="Conversational Q&A":
+    chatbot()
+if selected != "Conversational Q&A":
+    if 'flowmessages' in st.session_state:
+        del st.session_state['flowmessages']
+        st.rerun()
+
+if selected != "Document Q&A":
+    vector_db_keys = ['vectors', 'embeddings', 'docs', 'text_splitter', 'docs_chunks']
+    for key in vector_db_keys:
+        if key in st.session_state:
+            del st.session_state[key]
