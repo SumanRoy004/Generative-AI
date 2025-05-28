@@ -172,6 +172,6 @@ streamlit run app.py
 [![LangChain](https://img.shields.io/badge/LangChain-02E6B8?style=for-the-badge&logo=langchain&logoColor=black)](https://python.langchain.com/docs/introduction/)
 
 ## Deployment
-This application is deployed with streamlit: 
+This application is deployed with streamlit : 
 
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://generative-ai-djtdny7kvpwanggwngfcme.streamlit.app/)
