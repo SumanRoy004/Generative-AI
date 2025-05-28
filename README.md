@@ -151,7 +151,13 @@ The application follows these steps to generate the total calories of a given fo
 ```bash
   pip install -r requirements.txt
 ```
-6. Acquire these api keys through [GroqCloud](https://console.groq.com/playground),[Google AI Studio](https://aistudio.google.com/app/apikey), then put them in .env file and keep this file in secret
+6. Acquire these api keys through
+   
+      [![GroqCloud](https://img.shields.io/badge/GroqCloud-FF6B00?style=for-the-badge&logo=groq&logoColor=white)](https://console.groq.com/playground)
+
+      [![Google AI Studio](https://img.shields.io/badge/Google%20AI%20Studio-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://aistudio.google.com/app/apikey)
+ 
+      then put them in .env file and keep this file in secret
 
 ```bash
   GROQ_API_KEY="your_api_key_here"
