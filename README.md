@@ -153,7 +153,7 @@ The application follows these steps to generate the total calories of a given fo
 ```
 6. Acquire these api keys through
    
-      [![GroqCloud](https://img.shields.io/badge/GroqCloud-FF6B00?style=for-the-badge&logo=groq&logoColor=white)](https://console.groq.com/playground)
+      [![GroqCloud](https://img.shields.io/badge/GroqCloud-FF6B00?style=for-the-badge&logo=groq&logoColor=white)](https://console.groq.com/keys)
 
       [![Google AI Studio](https://img.shields.io/badge/Google%20AI%20Studio-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://aistudio.google.com/app/apikey)
  
